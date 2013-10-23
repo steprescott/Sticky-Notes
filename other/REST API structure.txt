@@ -1,0 +1,50 @@
+REST
+
+endpoint - http://sticky.alanedwardes.com
+
+POST /api/v1/user/authenticate
+username=user&password=pass
+
+Sucessful response:
+{
+	error: 0,
+	data: {
+		token: 'authentication token'
+	}
+}
+
+Unsuccessful response:
+{
+	error: 1 // Errors correspond to same ENUM on client and server
+	data: {}
+}
+
+API_ERRORS = { 1: ERR_INVALID_CREDENTIALS, 2: ERR_INVALID_TOKEN }
+
+----------------------
+
+All other API methods require a token to be POSTed
+
+POST /api/v1/notes/list
+token=token
+
+Token identifies current user in this case.
+
+Sucessful response:
+{
+	error: 0,
+	data: {
+		notes: [{
+			// Note 1
+		},
+		{
+			// Note 2, etc...
+		}]
+	}
+}
+
+Unsuccessful response:
+{
+	error: 2 // Errors correspond to same ENUM on client and server
+	data: {}
+}
