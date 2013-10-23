@@ -1,0 +1,16 @@
+----------------------
+ User
+----------------------
+Id			Int
+FrstName	Text
+Surname		Text
+Email		Text
+Password	Text
+
+----------------------
+ Note
+----------------------
+Id			Int
+Body		Text
+Created		DateTime
+Author		FK User
