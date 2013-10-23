@@ -1,8 +1,8 @@
 REST
 
-endpoint - http://sticky.alanedwardes.com
+endpoint - http://stickyapi.alanedwardes.com/1.0 // API version
 
-POST /api/v1/user/authenticate
+POST /user/authenticate
 username=user&password=pass
 
 Sucessful response:
@@ -15,17 +15,18 @@ Sucessful response:
 
 Unsuccessful response:
 {
-	error: 1 // Errors correspond to same ENUM on client and server
+	error: 1, // Errors correspond to same ENUM on client and server
 	data: {}
 }
 
-API_ERRORS = { 1: ERR_INVALID_CREDENTIALS, 2: ERR_INVALID_TOKEN }
+// Server (ex: JavaScript)
+var API_ERRORS = { 1: ERR_INVALID_CREDENTIALS, 2: ERR_INVALID_TOKEN }
 
 ----------------------
 
 All other API methods require a token to be POSTed
 
-POST /api/v1/notes/list
+POST /notes/list
 token=token
 
 Token identifies current user in this case.
@@ -45,6 +46,6 @@ Sucessful response:
 
 Unsuccessful response:
 {
-	error: 2 // Errors correspond to same ENUM on client and server
+	error: 2, // Errors correspond to same ENUM on client and server
 	data: {}
 }
