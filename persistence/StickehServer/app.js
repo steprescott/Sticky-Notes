@@ -7,11 +7,12 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var router = require('./router');
+var config = require('./config');
 
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', config.BIND_PORT);
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
