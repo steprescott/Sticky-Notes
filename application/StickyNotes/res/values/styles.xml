@@ -1,4 +1,11 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- awe: this is #AARRGGBB -->
+    <color name="white_opaque">#FFFFFFFF</color>
+	<color name="blue_opaque">#FF33b6ea</color>
+	<color name="light_blue_opaque">#FFa7ccdb</color>
+	<color name="black_opaque">#FF000000</color>
+	<color name="shadow">#55000000</color>
+	<color name="button_dark">#FF0b6c98</color>
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -14,7 +21,42 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+      <!-- <item name="android:background">@color/black_opaque</item> -->
+      <item name="android:windowBackground">@drawable/bluetolightbluegrad</item>
+      <item name="android:colorBackground">@color/black_opaque</item>
+      <item name="android:textColor">@color/white_opaque</item>
+    </style>
+    
+    <style name="EditTextStyle">
+        <item name="android:background">@color/white_opaque</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    
+    <style name="ButtonTextStyle">
+        <item name="android:background">@drawable/buttonbackground</item>
+        <item name="android:textColor">@color/white_opaque</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+    
+    <style name="WelcomeFont" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_opaque</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+    
+    <style name="WelcomeFontSmall" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_opaque</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowRadius">3</item>
     </style>
 
 </resources>

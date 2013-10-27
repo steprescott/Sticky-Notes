@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Sticky Notes</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="login_text">Enter your email address and password to access your notes</string>
+    <string name="welcome_text">Welcome to Sticky Notes</string>
+    <string name="email_text">test@example.org</string>
+    <string name="password_text">password</string>
+    <string name="login_button_text">Continue</string>
 </resources>
