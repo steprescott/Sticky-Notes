@@ -8,4 +8,9 @@
     <string name="email_text">test@example.org</string>
     <string name="password_text">password</string>
     <string name="login_button_text">Continue</string>
+    <string name="create_note_text">New Note</string>
+    <string name="create_note_title">Note</string>
+    <string name="create_note_date">Remind me&#8230;</string>
+    <string name="note_list_add">+</string>
+    <string name="create_note_save">Create Note</string>
 </resources>
