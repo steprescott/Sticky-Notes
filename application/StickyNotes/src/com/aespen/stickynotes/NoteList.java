@@ -1,6 +1,10 @@
-package com.aespen.stickynotes;
+package 	com.aespen.stickynotes;
+
+import com.aespen.stickynotes.core.ServiceLocator;
+import com.aespen.stickynotes.persistence.LocalRepository;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,5 +36,12 @@ public class NoteList extends Activity {
     {
     	Intent i = new Intent(this, NoteCreate.class);
         startActivity(i);
+        
+        LocalRepository lr = ServiceLocator.GetService(LocalRepository.class);
+        
+        if (lr != null)
+        {
+        	new AlertDialog.Builder(this).setMessage(lr.SayHello()).show();
+        }
     }
 }
