@@ -17,6 +17,17 @@ public class NoteList extends Activity {
         this.setContentView(R.layout.activity_notelist);
         
         this.initialiseListeners();
+        
+        LocalRepository lr = ServiceLocator.<LocalRepository>getService(LocalRepository.class);
+        
+        if (lr != null)
+        {
+        	new AlertDialog.Builder(this).setMessage(lr.sayHello()).show();
+        }
+        else
+        {
+        	new AlertDialog.Builder(this).setMessage("It was null").show();
+        }
     }
     
     protected void initialiseListeners()
@@ -36,12 +47,5 @@ public class NoteList extends Activity {
     {
     	Intent i = new Intent(this, NoteCreate.class);
         startActivity(i);
-        
-        LocalRepository lr = ServiceLocator.GetService(LocalRepository.class);
-        
-        if (lr != null)
-        {
-        	new AlertDialog.Builder(this).setMessage(lr.SayHello()).show();
-        }
     }
 }

@@ -4,21 +4,21 @@ package com.aespen.stickynotes.dao;
 /**
  * Entity mapped to table USER.
  */
-public class user {
+public class User {
 
     private Long id;
     private String firstName;
     private String surname;
     private String email;
 
-    public user() {
+    public User() {
     }
 
-    public user(Long id) {
+    public User(Long id) {
         this.id = id;
     }
 
-    public user(Long id, String firstName, String surname, String email) {
+    public User(Long id, String firstName, String surname, String email) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;

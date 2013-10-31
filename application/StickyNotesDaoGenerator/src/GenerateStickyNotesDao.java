@@ -9,13 +9,13 @@ public class GenerateStickyNotesDao
 	{
 		Schema schema = new Schema(1, "com.aespen.stickynotes.dao");
 
-		Entity user = schema.addEntity("user");
+		Entity user = schema.addEntity("User");
 		user.addIdProperty();
 		user.addStringProperty("firstName");
 		user.addStringProperty("surname");
 		user.addStringProperty("email");
 		
-		Entity note = schema.addEntity("note");
+		Entity note = schema.addEntity("Note");
 		note.addIdProperty();
 		note.addStringProperty("text");
 		note.addDateProperty("created");

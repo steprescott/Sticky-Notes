@@ -2,6 +2,7 @@ package com.aespen.stickynotes;
 
 import com.aespen.stickynotes.core.ServiceLocator;
 import com.aespen.stickynotes.persistence.LocalRepository;
+import com.aespen.stickynotes.persistence.DatabaseHandler;
 
 import android.app.Application;
 import android.content.res.Configuration;
@@ -9,6 +10,7 @@ import android.content.res.Configuration;
 public class ApplicationBootstrapper extends Application
 {
 	private LocalRepository localRepository;
+	private DatabaseHandler databaseHandler;
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig)
@@ -51,11 +53,13 @@ public class ApplicationBootstrapper extends Application
 	
 	private void createServices()
 	{
+		this.databaseHandler = new DatabaseHandler(getApplicationContext(), "stickyDatabase", null, 1);
 		this.localRepository = new LocalRepository();
 	}
 	
 	private void registerServices() throws Exception
 	{
-		ServiceLocator.<LocalRepository>RegisterService(this.localRepository);
+		ServiceLocator.<DatabaseHandler>registerService(this.databaseHandler);
+		ServiceLocator.<LocalRepository>registerService(this.localRepository);
 	}
 }

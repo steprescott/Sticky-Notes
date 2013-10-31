@@ -7,7 +7,7 @@ import de.greenrobot.dao.DaoException;
 /**
  * Entity mapped to table NOTE.
  */
-public class note {
+public class Note {
 
     private Long id;
     private String text;
@@ -18,20 +18,20 @@ public class note {
     private transient DaoSession daoSession;
 
     /** Used for active entity operations. */
-    private transient noteDao myDao;
+    private transient NoteDao myDao;
 
-    private user user;
+    private User user;
     private Long user__resolvedKey;
 
 
-    public note() {
+    public Note() {
     }
 
-    public note(Long id) {
+    public Note(Long id) {
         this.id = id;
     }
 
-    public note(Long id, String text, java.util.Date created, Long author) {
+    public Note(Long id, String text, java.util.Date created, Long author) {
         this.id = id;
         this.text = text;
         this.created = created;
@@ -77,14 +77,14 @@ public class note {
     }
 
     /** To-one relationship, resolved on first access. */
-    public user getUser() {
+    public User getUser() {
         Long __key = this.author;
         if (user__resolvedKey == null || !user__resolvedKey.equals(__key)) {
             if (daoSession == null) {
                 throw new DaoException("Entity is detached from DAO context");
             }
-            userDao targetDao = daoSession.getUserDao();
-            user userNew = targetDao.load(__key);
+            UserDao targetDao = daoSession.getUserDao();
+            User userNew = targetDao.load(__key);
             synchronized (this) {
                 user = userNew;
             	user__resolvedKey = __key;
@@ -93,7 +93,7 @@ public class note {
         return user;
     }
 
-    public void setUser(user user) {
+    public void setUser(User user) {
         synchronized (this) {
             this.user = user;
             author = user == null ? null : user.getId();
