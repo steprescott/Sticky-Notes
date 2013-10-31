@@ -54,6 +54,7 @@ public class ApplicationBootstrapper extends Application
 	private void createServices()
 	{
 		this.databaseHandler = new DatabaseHandler(getApplicationContext(), "stickyDatabase", null, 1);
+		
 		this.localRepository = new LocalRepository();
 	}
 	
