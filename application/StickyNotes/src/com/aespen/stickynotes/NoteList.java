@@ -1,13 +1,16 @@
 package 	com.aespen.stickynotes;
 
+import java.util.List;
+
 import com.aespen.stickynotes.core.ServiceLocator;
+import com.aespen.stickynotes.dao.Note;
 import com.aespen.stickynotes.persistence.ILocalRepository;
-import com.aespen.stickynotes.persistence.LocalRepository;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,7 +20,16 @@ public class NoteList extends Activity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_notelist);
         
-        this.initialiseListeners();       
+        ILocalRepository lr = ServiceLocator.getService(ILocalRepository.class);
+        
+        List<Note> notes = lr.getNotes();
+        
+        for (Note note : notes)
+        {
+        	Log.d("STICKY", note.getText());
+		}
+        
+        this.initialiseListeners();
     }
     
     protected void initialiseListeners()
@@ -37,10 +49,5 @@ public class NoteList extends Activity {
     {
     	Intent i = new Intent(this, NoteCreate.class);
         startActivity(i);
-        
-        ILocalRepository lr = ServiceLocator.getService(ILocalRepository.class);
-        
-        new AlertDialog.Builder(this).setMessage(lr.isSessionNull()).show();
-        lr.createNote("testing");
     }
 }

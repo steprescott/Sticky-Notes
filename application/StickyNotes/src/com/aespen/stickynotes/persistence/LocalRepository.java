@@ -1,8 +1,12 @@
 package com.aespen.stickynotes.persistence;
 
 import java.util.Date;
+import java.util.List;
 
-import com.aespen.stickynotes.core.ServiceLocator;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.aespen.stickynotes.dao.DaoMaster;
 import com.aespen.stickynotes.dao.DaoSession;
 import com.aespen.stickynotes.dao.Note;
 import com.aespen.stickynotes.dao.NoteDao;
@@ -10,32 +14,29 @@ import com.aespen.stickynotes.dao.NoteDao;
 public class LocalRepository implements ILocalRepository
 {
 	private DaoSession daoSession;
+	private SQLiteDatabase db;
+	private DaoMaster daoMaster;
+	private DaoMaster.DevOpenHelper helper;
 	
-	private DaoSession getSession()
+	public LocalRepository(Context applicationContext, String databaseName)
 	{
-		if (this.daoSession == null)
-		{
-			DatabaseHandler databaseHandler = ServiceLocator.getService(DatabaseHandler.class);
-			if (databaseHandler != null)
-			{
-				databaseHandler.getWritableDatabase(); // Create it
-				this.daoSession = databaseHandler.getCurrentSession();
-			}
-		}
-		
-		return this.daoSession;
+		helper = new DaoMaster.DevOpenHelper(applicationContext, databaseName, null);
+		db = helper.getWritableDatabase();
+		daoMaster = new DaoMaster(db);
+		daoSession = daoMaster.newSession();
 	}
 	
 	public String isSessionNull()
 	{
-		DaoSession session = this.getSession();
+		DaoSession session = this.daoSession;
 		
 		return (session == null) ? "it's null" : "it's not null";
 	}
 	
 	public boolean createNote(String text)
 	{
-		DaoSession session = this.getSession();
+		DaoSession session = this.daoSession;
+		
 		if (session == null)
 			return false;
 		
@@ -45,5 +46,16 @@ public class LocalRepository implements ILocalRepository
 		noteDao.insert(note);
 		
 		return true;
+	}
+
+	public List<Note> getNotes()
+	{
+		DaoSession session = this.daoSession;
+		
+		if (session == null)
+			return null;
+		
+		NoteDao noteDao = session.getNoteDao();
+		return noteDao.loadAll();
 	}
 }
