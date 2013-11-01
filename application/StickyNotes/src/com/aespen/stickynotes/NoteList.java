@@ -1,6 +1,7 @@
 package 	com.aespen.stickynotes;
 
 import com.aespen.stickynotes.core.ServiceLocator;
+import com.aespen.stickynotes.persistence.ILocalRepository;
 import com.aespen.stickynotes.persistence.LocalRepository;
 
 import android.app.Activity;
@@ -37,7 +38,7 @@ public class NoteList extends Activity {
     	Intent i = new Intent(this, NoteCreate.class);
         startActivity(i);
         
-        LocalRepository lr = ServiceLocator.getService(LocalRepository.class);
+        ILocalRepository lr = ServiceLocator.getService(ILocalRepository.class);
         
         new AlertDialog.Builder(this).setMessage(lr.isSessionNull()).show();
         lr.createNote("testing");

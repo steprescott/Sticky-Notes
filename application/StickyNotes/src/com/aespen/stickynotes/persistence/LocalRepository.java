@@ -7,7 +7,7 @@ import com.aespen.stickynotes.dao.DaoSession;
 import com.aespen.stickynotes.dao.Note;
 import com.aespen.stickynotes.dao.NoteDao;
 
-public class LocalRepository
+public class LocalRepository implements ILocalRepository
 {
 	private DaoSession daoSession;
 	

@@ -6,12 +6,16 @@ public class ServiceLocator
 {
 	private static HashMap<Class<?>, Object> instances = new HashMap<Class<?>, Object>();
 	
-	public static <T> void registerService(Object instance) throws Exception
+	public static void registerService(Object instance) throws Exception
 	{
-		Class<? extends Object> type = instance.getClass();
+		registerService(instance.getClass(), instance);
+	}
+	
+	public static void registerService(Class<?> type, Object instance) throws Exception
+	{
 		if (getService(type) == null)
 		{
-			instances.put(instance.getClass(), instance);
+			instances.put(type, instance);
 		}
 		else
 		{

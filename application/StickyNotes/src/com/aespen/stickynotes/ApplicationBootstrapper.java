@@ -1,6 +1,7 @@
 package com.aespen.stickynotes;
 
 import com.aespen.stickynotes.core.ServiceLocator;
+import com.aespen.stickynotes.persistence.ILocalRepository;
 import com.aespen.stickynotes.persistence.LocalRepository;
 import com.aespen.stickynotes.persistence.DatabaseHandler;
 
@@ -54,13 +55,12 @@ public class ApplicationBootstrapper extends Application
 	private void createServices()
 	{
 		this.databaseHandler = new DatabaseHandler(getApplicationContext(), "stickyDatabase", null, 1);
-		
 		this.localRepository = new LocalRepository();
 	}
 	
 	private void registerServices() throws Exception
 	{
-		ServiceLocator.<DatabaseHandler>registerService(this.databaseHandler);
-		ServiceLocator.<LocalRepository>registerService(this.localRepository);
+		ServiceLocator.registerService(this.databaseHandler);
+		ServiceLocator.registerService(ILocalRepository.class, this.localRepository);
 	}
 }
