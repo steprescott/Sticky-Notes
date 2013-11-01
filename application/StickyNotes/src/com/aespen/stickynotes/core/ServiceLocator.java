@@ -35,4 +35,9 @@ public class ServiceLocator
 			return null;
 		}
 	}
+	
+	public static void clearServices()
+	{
+		instances.clear();
+	}
 }
