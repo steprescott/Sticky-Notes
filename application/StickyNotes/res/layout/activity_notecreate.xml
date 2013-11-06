@@ -9,7 +9,7 @@
     tools:context=".NoteCreate" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/noteText"
         style="@style/EditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
@@ -27,13 +27,13 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/createNoteButton"
         style="@style/ButtonTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/noteText"
+        android:layout_alignRight="@+id/noteText"
+        android:layout_below="@+id/noteText"
         android:layout_marginTop="20dp"
         android:text="@string/create_note_save" />
 
