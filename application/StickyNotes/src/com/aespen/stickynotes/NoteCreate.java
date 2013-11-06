@@ -4,7 +4,6 @@ import com.aespen.stickynotes.core.ServiceLocator;
 import com.aespen.stickynotes.persistence.ILocalRepository;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +43,8 @@ public class NoteCreate extends Activity {
     	
     	Toast.makeText(getApplicationContext(), "Note created", Toast.LENGTH_SHORT).show();
     	
-    	Intent i = new Intent(this, NoteList.class);
-        startActivity(i);
+    	// Pop the activity from the stack
+    	// and return to the note list
+    	finish();
     }
 }
