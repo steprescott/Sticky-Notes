@@ -29,6 +29,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.idea/
+persistence/StickehServer/config.js
 
 # External tool builders
 .externalToolBuilders/
