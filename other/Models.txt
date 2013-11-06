@@ -1,16 +1,16 @@
 ----------------------
  User
 ----------------------
-Id			Int(11)
-FrstName	Text(255)
-Surname		Text(255)
-Email		Text(255)
-Password	Text(255)
+id			Int(11)
+frstName	Text(255)
+surname		Text(255)
+email		Text(255)
+password	Text(255)
 
 ----------------------
  Note
 ----------------------
-Id			Int(11)
-Body		Text
-Created		DateTime
-Author		Int FK User(11)
+id			Int(11)
+body		Text
+created		DateTime
+author		Int FK User(11)
