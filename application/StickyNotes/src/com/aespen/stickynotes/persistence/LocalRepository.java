@@ -10,6 +10,7 @@ import com.aespen.stickynotes.dao.DaoMaster;
 import com.aespen.stickynotes.dao.DaoSession;
 import com.aespen.stickynotes.dao.Note;
 import com.aespen.stickynotes.dao.NoteDao;
+import com.aespen.stickynotes.dao.NoteDao.Properties;
 
 public class LocalRepository implements ILocalRepository
 {
@@ -17,7 +18,7 @@ public class LocalRepository implements ILocalRepository
 	private SQLiteDatabase db;
 	private DaoMaster daoMaster;
 	private DaoMaster.DevOpenHelper helper;
-	
+
 	public LocalRepository(Context applicationContext, String databaseName)
 	{
 		helper = new DaoMaster.DevOpenHelper(applicationContext, databaseName, null);
@@ -25,37 +26,37 @@ public class LocalRepository implements ILocalRepository
 		daoMaster = new DaoMaster(db);
 		daoSession = daoMaster.newSession();
 	}
-	
+
 	public String isSessionNull()
 	{
 		DaoSession session = this.daoSession;
-		
+
 		return (session == null) ? "it's null" : "it's not null";
 	}
-	
+
 	public boolean createNote(String text)
 	{
 		DaoSession session = this.daoSession;
-		
+
 		if (session == null)
 			return false;
-		
+
 		NoteDao noteDao = session.getNoteDao();
-		
+
 		Note note = new Note(null, text, new Date(), null);
 		noteDao.insert(note);
-		
+
 		return true;
 	}
 
 	public List<Note> getNotes()
 	{
 		DaoSession session = this.daoSession;
-		
+
 		if (session == null)
 			return null;
-		
+
 		NoteDao noteDao = session.getNoteDao();
-		return noteDao.loadAll();
+		return noteDao.queryBuilder().orderDesc(Properties.Created).list();
 	}
 }

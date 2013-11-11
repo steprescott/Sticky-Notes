@@ -32,6 +32,12 @@
         <item name="android:padding">10dp</item>
     </style>
     
+    <style name="NoteTextViewStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@color/white_opaque</item>
+        <item name="android:topOffset">2dp</item>
+    </style>
+    
     <style name="ButtonTextStyle">
         <item name="android:background">@drawable/buttonbackground</item>
         <item name="android:textColor">@color/white_opaque</item>
