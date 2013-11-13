@@ -32,6 +32,12 @@
 	            android:name="android.support.PARENT_ACTIVITY"
 	            android:value=".NoteList" />
         </activity>
+        
+        <activity
+            android:name=".Login"
+            android:label="@string/login_text" >
+        </activity>
+        
     </application>
 
 </manifest>
