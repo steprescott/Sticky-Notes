@@ -43,8 +43,8 @@ public class NoteList extends Activity
 
 	protected void initialiseListeners()
 	{
-		Button btn = (Button) findViewById(R.id.addNote);
-		btn.setOnClickListener(new View.OnClickListener()
+		Button newNoteButton = (Button) findViewById(R.id.addNote);
+		newNoteButton.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
@@ -52,11 +52,27 @@ public class NoteList extends Activity
 				addNotePressed(v);
 			}
 		});
+		
+		Button createAccountButton = (Button) findViewById(R.id.createAccountButton);
+		createAccountButton.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				createAccountPressed(v);
+			}
+		});
 	}
 
 	protected void addNotePressed(View v)
 	{
 		Intent i = new Intent(this, NoteCreate.class);
+		startActivity(i);
+	}
+	
+	protected void createAccountPressed(View v)
+	{
+		Intent i = new Intent(this, Login.class);
 		startActivity(i);
 	}
 }

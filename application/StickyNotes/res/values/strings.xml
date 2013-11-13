@@ -13,4 +13,5 @@
     <string name="create_note_date">Remind me&#8230;</string>
     <string name="note_list_add">+</string>
     <string name="create_note_save">Create Note</string>
+    <string name="create_account">Create account</string>
 </resources>
