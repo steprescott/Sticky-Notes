@@ -2,15 +2,28 @@ REST
 
 endpoint - http://stickyapi.alanedwardes.com/1.0 // API version
 
-POST /user/authenticate
+POST /user/login
 username=user&password=pass
 
 Sucessful response:
 {
-	token: 'authentication token'
+	session: session object containing token ID,
+	user: user object
 }
 
 Error codes: 403
+
+Get user object
+/user/get/:id
+Sucessful response:
+{
+	id:10000000001,
+        firstName: 'Cool',
+        surname: 'McRomance',
+        email: 'test@testmail.com',
+}
+
+Error codes: 401
 
 ----------------------------------------------------
 
@@ -30,3 +43,10 @@ Sucessful response:
 		// Note 2, etc...
 	}]
 }
+
+POST /notes/save
+{
+	body: text
+	token: token,
+}
+success: 201, error: 500
