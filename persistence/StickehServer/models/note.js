@@ -13,6 +13,7 @@ module.exports = {
         //hasOne: (user, {as: 'author'})
     },
     options:{
-        freezeTableName: true
+        freezeTableName: true,
+        timestamps: false
     }
 }
