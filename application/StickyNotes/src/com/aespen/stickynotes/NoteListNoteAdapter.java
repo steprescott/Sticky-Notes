@@ -1,7 +1,5 @@
 package com.aespen.stickynotes;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +12,9 @@ public class NoteListNoteAdapter extends android.widget.ArrayAdapter<Note>
 {
 	private LayoutInflater inflater;
 
-	public NoteListNoteAdapter(Context context, int resource, List<Note> objects)
+	public NoteListNoteAdapter(Context context, int resource)
 	{
-		super(context, resource, objects);
+		super(context, resource);
 
 		inflater = LayoutInflater.from(context);
 	}

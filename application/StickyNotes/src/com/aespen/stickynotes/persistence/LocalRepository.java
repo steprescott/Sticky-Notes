@@ -59,4 +59,16 @@ public class LocalRepository implements ILocalRepository
 		NoteDao noteDao = session.getNoteDao();
 		return noteDao.queryBuilder().orderDesc(Properties.Created).list();
 	}
+
+	public boolean deleteNote(Note note)
+	{
+		DaoSession session = this.daoSession;
+
+		if (session == null)
+			return false;
+
+		NoteDao noteDao = session.getNoteDao();
+		noteDao.delete(note);
+		return true;
+	}
 }
