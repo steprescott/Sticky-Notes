@@ -45,5 +45,8 @@ Sucessful response:
 }
 
 POST /notes/save
-token=token
-note= note
+{
+	body: text
+	token: token,
+}
+success: 201, error: 500
