@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var router = require('./router');
 var config = require('./config');
+var Sequelize = require("sequelize")
 
 var app = express();
 
@@ -21,6 +22,12 @@ app.use(express.methodOverride());
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+// Start sequelize
+require("./orm").setup('./models', config.MYSQL_DATABASE, config.MYSQL_USERNAME, config.MYSQL_PASSWORD, {
+    host: config.MYSQL_HOST,
+    port: config.MYSQL_PORT
+});
 
 // Start the router that deals with all requests
 router.requestHandler(express, app);
