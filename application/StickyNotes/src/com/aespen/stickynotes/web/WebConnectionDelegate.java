@@ -29,17 +29,101 @@ import android.accounts.NetworkErrorException;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.webkit.WebIconDatabase.IconListener;
+import android.widget.Toast;
 
+import com.aespen.stickynotes.Login;
+import com.aespen.stickynotes.dao.ICallbackListner;
+import com.aespen.stickynotes.dao.Note;
+import com.aespen.stickynotes.dao.User;
 import com.squareup.okhttp.OkHttpClient;
 
 
 public class WebConnectionDelegate
 {
-	private OkHttpClient client = new OkHttpClient();
-
+	public ICallbackListner listner;
+	
+	private static OkHttpClient client = new OkHttpClient();
+	
 	private static final String BASE_URL = "http://stickyapi.alanedwardes.com/";
+	
+	public void login(final String username, final String password) throws NetworkErrorException, IOException, JSONException
+	{
+		new AsyncTask<Void, Void, JSONObject>() {
 
+			@Override
+			protected JSONObject doInBackground(Void... params) {
+				try {
+					Map <String,String> parameters =  new HashMap<String,String>();
+					parameters.put("username", username);
+					parameters.put("password", password);
+					
+					JSONObject jsonObject = (JSONObject) WebConnectionDelegate.postJsonAtPath("api/login", parameters);
+					
+					return jsonObject;
+//					return jsonObject.optString("user");
+				} catch (NetworkErrorException e) {
+					Log.v("Error",e.toString());
+//					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				return null;
+			}
+		
+			protected void onPostExecute(final JSONObject result) {
+				if (result != null) {
+					if(listner != null) {
+						listner.callback(result);
+					}
+				}
+			};
+		}.execute();
+	}
+	
+	public static void uploadNoteToWebService(final Note note) throws NetworkErrorException, IOException, JSONException
+	{
+		new AsyncTask<Void, Void, String>() {
+
+			@Override
+			protected String doInBackground(Void... params) {
+				try {
+					Map <String,String> parameters =  new HashMap<String,String>();
+					parameters.put("id", note.getId().toString());
+					parameters.put("author", note.getAuthor().toString());
+					parameters.put("text", note.getText().toString());
+					parameters.put("created", note.getCreated().toString());
+					parameters.put("user_id", note.getUser().getId().toString());
+					
+					JSONObject jsonObject = (JSONObject) WebConnectionDelegate.postJsonAtPath("api/note", parameters);
+					
+					return jsonObject.toString();
+//					return jsonObject.optString("user");
+				} catch (NetworkErrorException e) {
+					Log.v("Error",e.toString());
+//					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				return null;
+			}
+		
+			protected void onPostExecute(String result) {
+				if (result != null) {
+//					Toast.makeText(Login.this, "POST : " + result, Toast.LENGTH_SHORT).show();
+				}
+			};
+			
+			
+		}.execute();
+	}
+	
 	@SuppressLint("NewApi")
 	public Object getJsonAtPath(String path, Map<String, String> parameters) throws IOException,
 	NetworkErrorException, JSONException
@@ -81,7 +165,7 @@ public class WebConnectionDelegate
 		}
 	}
 
-	public Object postJsonAtPath(String path, Map<String, String> parameters) throws IOException,
+	public static Object postJsonAtPath(String path, Map<String, String> parameters) throws IOException,
 	NetworkErrorException, JSONException
 	{
 
@@ -116,7 +200,7 @@ public class WebConnectionDelegate
 				byte[] response = readFully(in);
 				String responseString = new String(response, "UTF-8");
 
-				throw new NetworkErrorException("Unexpected HTTP response: "
+				throw new NetworkErrorException("\n\nUnexpected HTTP response: "
 						+ connection.getResponseCode() + ": " + connection.getResponseMessage()
 						+ " \n " + responseString + "\n Params: "
 						+ ((params == null) ? "null" : params.toString()));
@@ -124,10 +208,8 @@ public class WebConnectionDelegate
 			in = connection.getInputStream();
 			byte[] response = readFully(in);
 			String responseString = new String(response, "UTF-8");
-			
-			Map <String,String> responseMap =  new HashMap<String,String>();
-			responseMap.put("Message", responseString);
-			return new JSONObject(responseMap);
+
+			return new JSONObject(responseString);
 		}
 		finally
 		{
@@ -137,7 +219,7 @@ public class WebConnectionDelegate
 		}
 	}
 
-	private JSONObject mapStringToJsonObject(Map<String, String> parameters) throws JSONException
+	private static JSONObject mapStringToJsonObject(Map<String, String> parameters) throws JSONException
 	{
 		JSONObject params = new JSONObject();
 		for (Map.Entry<String, String> entry : parameters.entrySet())
