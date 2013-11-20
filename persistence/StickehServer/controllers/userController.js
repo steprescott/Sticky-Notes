@@ -3,7 +3,7 @@ var orm = require('../orm');
 exports.getUserData = function (req, res) {
     var id = req.params.id;
 
-    var userModel = orm.model('user');
+    var userModel = orm.model('User');
     userModel.find({ where: {id: id} }).error(function (err) {
 
         // error callback
@@ -19,12 +19,11 @@ exports.getUserData = function (req, res) {
 
 exports.loginRequest = function (req, res) {
 
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.headers.username;
+    var password = req.headers.password;
 
-    var userModel = orm.model('user');
+    var userModel = orm.model('User');
     userModel.find({ where: {email: username} }).error(function (err) {
-
         // error callback
     }).success(function (user) {
             if (!user)
