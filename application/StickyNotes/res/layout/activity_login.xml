@@ -42,21 +42,6 @@
         android:hint="@string/email_text"
         android:inputType="textEmailAddress" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        style="@style/EditTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextEmail"
-        android:layout_alignRight="@+id/editTextEmail"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="@string/password_text"
-        android:inputType="textPassword" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/continueLogin"
         style="@style/ButtonTextStyle"
@@ -68,5 +53,18 @@
         android:layout_marginTop="18dp"
         android:onClick="continueLogin"
         android:text="@string/login_button_text" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        style="@style/EditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextEmail"
+        android:layout_alignRight="@+id/editTextEmail"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="@string/password_text"
+        android:inputType="textPassword" />
 
 </RelativeLayout>
