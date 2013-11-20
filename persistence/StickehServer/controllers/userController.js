@@ -19,13 +19,14 @@ exports.getUserData = function (req, res) {
 
 exports.loginRequest = function (req, res) {
 
-    var username = req.headers.username;
-    var password = req.headers.password;
+    var username = req.body.username;
+    var password = req.body.password;
 
     var userModel = orm.model('User');
     userModel.find({ where: {email: username} }).error(function (err) {
         // error callback
     }).success(function (user) {
+	console.log(user);
             if (!user)
             {
                 res.send(403, 'Invalid credentials');
