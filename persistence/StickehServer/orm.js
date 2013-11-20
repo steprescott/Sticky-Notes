@@ -31,6 +31,10 @@ var singleton = function singleton(){
 
     function init() {
         filesystem.readdirSync(modelsPath).forEach(function(name){
+			// We only want .js files
+			if (name.slice(-3) != '.js')
+				return;
+			
             var object = require(modelsPath + "/" + name);
             var options = object.options || {}
             var modelName = name.replace(/\.js$/i, "");
