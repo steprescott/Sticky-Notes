@@ -57,4 +57,10 @@ public class User {
         this.email = email;
     }
 
+    @Override
+    public String toString()
+    {
+    	String theString = "ID : " + this.id.toString() + "\nName : " + this.firstName + " " + this.surname + "\nEmail : " + this.email;
+    	return theString;
+    }
 }

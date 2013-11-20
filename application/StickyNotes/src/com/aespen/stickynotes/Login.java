@@ -7,6 +7,8 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.aespen.stickynotes.dao.ICallbackListner;
+import com.aespen.stickynotes.dao.User;
 import com.aespen.stickynotes.web.WebConnectionDelegate;
 
 import android.os.AsyncTask;
@@ -20,7 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Login extends Activity {
+public class Login extends Activity implements ICallbackListner {
 
 	private WebConnectionDelegate connectionDelegate;
 	
@@ -43,39 +45,24 @@ public class Login extends Activity {
     public void continueLoginMethod(View v) {
 		final EditText editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 		final EditText editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-
-		new AsyncTask<Void, Void, String>() {
-
-			@Override
-			protected String doInBackground(Void... params) {
-				try {
-					Map <String,String> parameters =  new HashMap<String,String>();
-					parameters.put("username", editTextEmail.getText().toString());
-					parameters.put("password", editTextPassword.getText().toString());
-					
-					JSONObject jsonObject = (JSONObject) connectionDelegate.postJsonAtPath("api/login", parameters);
-					
-					return jsonObject.toString();
-//					return jsonObject.optString("user");
-				} catch (NetworkErrorException e) {
-					Log.v("Error",e.toString());
-//					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-				return null;
-			}
-		
-			protected void onPostExecute(String result) {
-				if (result != null) {
-					Toast.makeText(Login.this, "POST : " + result, Toast.LENGTH_SHORT).show();
-				}
-			};
+		try
+		{
+			connectionDelegate.listner = this;
 			
-			
-		}.execute();
+			connectionDelegate.login(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+		} catch (NetworkErrorException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 //		AlertDialog.Builder altDialog= new AlertDialog.Builder(this);
 //		altDialog.setMessage(editTextEmail.getText().toString() + editTextPassword.getText().toString());
@@ -87,5 +74,19 @@ public class Login extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.landing, menu);
         return true;
+    }
+    
+    @Override
+    public void callback(JSONObject object)
+    {
+    	JSONObject userJSON = object.optJSONObject("user");
+		
+		User newUser = new User();
+		newUser.setFirstName(userJSON.optString("firstName"));
+		newUser.setSurname(userJSON.optString("surname"));
+		newUser.setEmail(userJSON.optString("email"));
+		newUser.setId(userJSON.optLong("id"));
+		
+		Log.e("User details : ", "User " + newUser.toString());
     }
 }
