@@ -4,7 +4,7 @@ var orm = require("../orm")
 //Creating our module
 module.exports = {
     model:{
-        id: Seq.INTEGER,
+        id: {type: Seq.INTEGER, autoIncrement: true},
         body: Seq.TEXT,
         created: Seq.DATE,
         author: Seq.INTEGER

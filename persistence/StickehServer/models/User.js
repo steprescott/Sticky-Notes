@@ -4,11 +4,11 @@ var orm = require("../orm")
 //Creating our module
 module.exports = {
     model:{
-        id: Seq.INTEGER,
+        id: {type: Seq.INTEGER, autoIncrement: true},
         firstName: Seq.STRING,
         surname: Seq.STRING,
         email: Seq.STRING,
-        pssword: Seq.STRING
+        password: Seq.STRING
     },
     relations:{
         //hasOne: (user, {as: 'author'})
