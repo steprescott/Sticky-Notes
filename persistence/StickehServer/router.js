@@ -7,9 +7,9 @@ exports.requestHandler = function(express, app)
     //example of a get
     app.get('/user/:id', userController.getUserData);
 
-    app.get('/notes/list', noteController.listNotesForUser);
-
     app.post('/api/login', userController.loginRequest);
+
+    app.post('/notes/list', noteController.listNotesForUser);
     app.post('/notes/save', noteController.persistNote);
 
 }

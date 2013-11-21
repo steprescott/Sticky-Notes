@@ -30,7 +30,7 @@ Error codes: 401
 All other API methods require a token to be POSTed
 
 POST /notes/list
-token=token
+token=token - Just pass in the user id here for now
 
 Token identifies current user in this case.
 
