@@ -1,7 +1,7 @@
 var orm = require('../orm');
 exports.listNotesForUser = function(req, res){
 
-    var noteModel = orm.model('note');
+    var noteModel = orm.model('Note');
 
     // some mock data built using sequelize
     var notes =
@@ -17,16 +17,17 @@ exports.listNotesForUser = function(req, res){
 };
 
 exports.persistNote = function(req, res){
-    var noteModel = orm.model('note');
+    var noteModel = orm.model('Note');
     var body = req.body.body;
+    var author = req.body.author;
     var created = new Date();
-    var author = 10000000001; // TODO: Get this value by checking the session token
 
     noteModel.build({body: body, created: created, author: author})
         .save()
-        .success(function() {
+        .success(function(result) {
 
-            res.send(201, "note saved");
+            // Respond with the ID of the saved note
+            res.send(201, result.dataValues.id);
 
         }).error(function(err) {
             res.send(500, "Error saving note");
