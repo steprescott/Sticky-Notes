@@ -7,12 +7,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.aespen.stickynotes.core.ServiceLocator;
 import com.aespen.stickynotes.dao.Note;
@@ -23,6 +25,7 @@ public class NoteList extends Activity
 	ILocalRepository localRepository;
 	private ListView noteListView;
 	private NoteListNoteAdapter noteListNoteAdapter;
+	private String filterCriteriaString = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -45,7 +48,15 @@ public class NoteList extends Activity
 
 	protected void refreshNotes()
 	{
-		List<Note> notes = this.localRepository.getNotes();
+		List<Note> notes;
+		if (this.filterCriteriaString.length() == 0)
+		{
+			notes = this.localRepository.getNotes();
+		}
+		else
+		{
+			notes = this.localRepository.getNotesThatContain(this.filterCriteriaString);
+		}
 		this.noteListNoteAdapter.clear();
 		this.noteListNoteAdapter.addAll(notes);
 	}
@@ -76,6 +87,17 @@ public class NoteList extends Activity
 				createAccountPressed(v);
 			}
 		});
+		
+		TextView searchNotesTextView = (TextView) findViewById(R.id.searchNotes);
+		searchNotesTextView.setOnKeyListener(new View.OnKeyListener()
+		{
+			public boolean onKey(View v, int keyCode, KeyEvent event)
+			{
+				TextView searchInput = (TextView) v;
+				filterNotes(searchInput.getText().toString());
+				return false;
+			}
+		});
 
 		this.noteListView.setOnItemLongClickListener(new OnItemLongClickListener()
 		{
@@ -85,6 +107,12 @@ public class NoteList extends Activity
 				return true;
 			}
 		});
+	}
+	
+	protected void filterNotes(String filter)
+	{
+		this.filterCriteriaString = filter;
+		this.refreshNotes();
 	}
 
 	protected void noteLongPressed(View view, int pos, long id)

@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/addNote"
-        android:layout_below="@+id/addNote"
+        android:layout_below="@+id/searchNotes"
         android:dividerHeight="@dimen/note_list_margin" />
 
     <Button
@@ -30,8 +30,22 @@
         style="@style/ButtonTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/notelist"
+        android:layout_above="@+id/searchNotes"
         android:layout_alignLeft="@+id/notelist"
         android:text="@string/create_account" />
+
+    <EditText
+        android:id="@+id/searchNotes"
+        style="@style/EditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/notelist"
+        android:layout_alignRight="@+id/notelist"
+        android:layout_below="@+id/addNote"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

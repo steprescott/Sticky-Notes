@@ -13,4 +13,6 @@ public interface ILocalRepository
 	List<Note> getNotes();
 
 	boolean deleteNote(Note note);
+	
+	List<Note> getNotesThatContain(String term);
 }
