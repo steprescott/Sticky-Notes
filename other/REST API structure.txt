@@ -13,6 +13,12 @@ Sucessful response:
 
 Error codes: 403
 
+POST/user/register
+firstName, surname, password, email
+success: 201
+error: 500
+invalid: 400
+
 Get user object
 /user/get/:id
 Sucessful response:
