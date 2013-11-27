@@ -4,10 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import java.text.DateFormatSymbols;
 
+import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class NoteListRow extends RelativeLayout
 {
@@ -28,7 +29,7 @@ public class NoteListRow extends RelativeLayout
 
         int monthNumber = cal.get(Calendar.MONTH);
         String monthName = this.getMonthNameFromMonthNumber(monthNumber);
-        this.noteMonth.setText(monthName.toUpperCase());
+        this.noteMonth.setText(monthName.toUpperCase(Locale.getDefault()));
 
         int date = cal.get(Calendar.DATE);
         this.noteDate.setText(String.valueOf(date));
