@@ -12,8 +12,6 @@ import com.aespen.stickynotes.dao.Note;
 import com.aespen.stickynotes.dao.NoteDao;
 import com.aespen.stickynotes.dao.NoteDao.Properties;
 
-import de.greenrobot.dao.query.WhereCondition;
-
 public class LocalRepository implements ILocalRepository
 {
 	private DaoSession daoSession;
@@ -49,6 +47,16 @@ public class LocalRepository implements ILocalRepository
 		noteDao.insert(note);
 
 		return true;
+	}
+	
+	public void saveNote(Note note)
+	{
+		DaoSession session = this.daoSession;
+
+		if (session == null)
+			return;
+		
+		session.insertOrReplace(note);
 	}
 
 	public List<Note> getNotes()

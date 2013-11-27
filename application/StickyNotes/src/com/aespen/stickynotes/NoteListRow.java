@@ -9,9 +9,6 @@ import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by Alan on 26/11/13.
- */
 public class NoteListRow extends RelativeLayout
 {
     private TextView noteText;
@@ -44,6 +41,7 @@ public class NoteListRow extends RelativeLayout
     public NoteListRow(Context context)
     {
         super(context);
+        
         LayoutInflater.from(context).inflate(R.layout.note_list_layout, this);
         noteText = (TextView) findViewById(R.id.note_list_item_text);
         noteDate = (TextView) findViewById(R.id.note_list_item_date);
@@ -53,6 +51,6 @@ public class NoteListRow extends RelativeLayout
 
     private String getMonthNameFromMonthNumber(int month)
     {
-        return new DateFormatSymbols().getShortMonths()[month-1];
+        return new DateFormatSymbols().getShortMonths()[month];
     }
 }

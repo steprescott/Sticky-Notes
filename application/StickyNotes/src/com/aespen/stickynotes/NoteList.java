@@ -11,8 +11,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -107,6 +109,14 @@ public class NoteList extends Activity
 				return true;
 			}
 		});
+		
+		this.noteListView.setOnItemClickListener(new OnItemClickListener()
+		{
+			public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id)
+			{
+				notePressed(view, pos, id);
+			}
+		});
 	}
 	
 	protected void filterNotes(String filter)
@@ -135,6 +145,40 @@ public class NoteList extends Activity
 		builder.setPositiveButton("Yes", dialoguePositiveListener);
 		builder.setNegativeButton("No", null);
 		builder.show();
+	}
+	
+	protected void notePressed(View view, int pos, long id)
+	{
+		final Note note = this.noteListNoteAdapter.getItem(pos);
+
+		if (note == null)
+			return;
+		
+		final EditText input = new EditText(this);
+		input.setText(note.getText().toString());
+
+		DialogInterface.OnClickListener dialoguePositiveListener = new DialogInterface.OnClickListener()
+		{
+			public void onClick(DialogInterface dialog, int which)
+			{
+				note.setText(input.getText().toString());
+				editNote(note);
+			}
+		};
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setView(input);
+		builder.setMessage("Edit Note");
+		builder.setPositiveButton("Save", dialoguePositiveListener);
+		builder.setNegativeButton("Cancel", null);
+		builder.show();
+	}
+	
+	protected void editNote(Note note)
+	{
+		localRepository.saveNote(note);
+		
+		this.refreshNotes();
 	}
 
 	protected void deleteNote(Note note)

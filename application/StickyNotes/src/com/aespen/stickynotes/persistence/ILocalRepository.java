@@ -15,4 +15,6 @@ public interface ILocalRepository
 	boolean deleteNote(Note note);
 	
 	List<Note> getNotesThatContain(String term);
+	
+	void saveNote(Note note);
 }

@@ -1,9 +1,6 @@
 package com.aespen.stickynotes;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,7 +8,6 @@ import com.aespen.stickynotes.dao.ICallbackListner;
 import com.aespen.stickynotes.dao.User;
 import com.aespen.stickynotes.web.WebConnectionDelegate;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.accounts.NetworkErrorException;
 import android.app.Activity;
@@ -20,7 +16,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class Login extends Activity implements ICallbackListner {
 
