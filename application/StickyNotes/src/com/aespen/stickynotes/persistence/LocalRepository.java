@@ -33,21 +33,6 @@ public class LocalRepository implements ILocalRepository
 
 		return (session == null) ? "it's null" : "it's not null";
 	}
-
-	public boolean createNote(String text)
-	{
-		DaoSession session = this.daoSession;
-
-		if (session == null)
-			return false;
-
-		NoteDao noteDao = session.getNoteDao();
-
-		Note note = new Note(null, text, new Date(), null);
-		noteDao.insert(note);
-
-		return true;
-	}
 	
 	public void saveNote(Note note)
 	{

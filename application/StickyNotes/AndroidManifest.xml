@@ -7,8 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -32,12 +33,9 @@
 	            android:name="android.support.PARENT_ACTIVITY"
 	            android:value=".NoteList" />
         </activity>
-        
         <activity
             android:name=".Login"
             android:label="@string/login_text" >
         </activity>
-        
     </application>
-
 </manifest>

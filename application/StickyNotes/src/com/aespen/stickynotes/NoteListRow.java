@@ -24,6 +24,11 @@ public class NoteListRow extends RelativeLayout
 
     public void setNoteDate(Date noteDate)
     {
+        if (noteDate == null)
+        {
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         cal.setTime(noteDate);
 

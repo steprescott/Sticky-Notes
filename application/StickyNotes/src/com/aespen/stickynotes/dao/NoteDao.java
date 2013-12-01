@@ -29,7 +29,9 @@ public class NoteDao extends AbstractDao<Note, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Text = new Property(1, String.class, "text", false, "TEXT");
         public final static Property Created = new Property(2, java.util.Date.class, "created", false, "CREATED");
-        public final static Property Author = new Property(3, Long.class, "author", false, "AUTHOR");
+        public final static Property Latitude = new Property(3, Double.class, "latitude", false, "LATITUDE");
+        public final static Property Longitude = new Property(4, Double.class, "longitude", false, "LONGITUDE");
+        public final static Property Author = new Property(5, Long.class, "author", false, "AUTHOR");
     };
 
     private DaoSession daoSession;
@@ -51,7 +53,9 @@ public class NoteDao extends AbstractDao<Note, Long> {
                 "'_id' INTEGER PRIMARY KEY ," + // 0: id
                 "'TEXT' TEXT," + // 1: text
                 "'CREATED' INTEGER," + // 2: created
-                "'AUTHOR' INTEGER);"); // 3: author
+                "'LATITUDE' REAL," + // 3: latitude
+                "'LONGITUDE' REAL," + // 4: longitude
+                "'AUTHOR' INTEGER);"); // 5: author
     }
 
     /** Drops the underlying database table. */
@@ -80,9 +84,19 @@ public class NoteDao extends AbstractDao<Note, Long> {
             stmt.bindLong(3, created.getTime());
         }
  
+        Double latitude = entity.getLatitude();
+        if (latitude != null) {
+            stmt.bindDouble(4, latitude);
+        }
+ 
+        Double longitude = entity.getLongitude();
+        if (longitude != null) {
+            stmt.bindDouble(5, longitude);
+        }
+ 
         Long author = entity.getAuthor();
         if (author != null) {
-            stmt.bindLong(4, author);
+            stmt.bindLong(6, author);
         }
     }
 
@@ -105,7 +119,9 @@ public class NoteDao extends AbstractDao<Note, Long> {
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // text
             cursor.isNull(offset + 2) ? null : new java.util.Date(cursor.getLong(offset + 2)), // created
-            cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3) // author
+            cursor.isNull(offset + 3) ? null : cursor.getDouble(offset + 3), // latitude
+            cursor.isNull(offset + 4) ? null : cursor.getDouble(offset + 4), // longitude
+            cursor.isNull(offset + 5) ? null : cursor.getLong(offset + 5) // author
         );
         return entity;
     }
@@ -116,7 +132,9 @@ public class NoteDao extends AbstractDao<Note, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setText(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setCreated(cursor.isNull(offset + 2) ? null : new java.util.Date(cursor.getLong(offset + 2)));
-        entity.setAuthor(cursor.isNull(offset + 3) ? null : cursor.getLong(offset + 3));
+        entity.setLatitude(cursor.isNull(offset + 3) ? null : cursor.getDouble(offset + 3));
+        entity.setLongitude(cursor.isNull(offset + 4) ? null : cursor.getDouble(offset + 4));
+        entity.setAuthor(cursor.isNull(offset + 5) ? null : cursor.getLong(offset + 5));
      }
     
     /** @inheritdoc */

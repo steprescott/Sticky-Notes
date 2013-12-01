@@ -12,6 +12,8 @@ public class Note {
     private Long id;
     private String text;
     private java.util.Date created;
+    private Double latitude;
+    private Double longitude;
     private Long author;
 
     /** Used to resolve relations */
@@ -31,10 +33,12 @@ public class Note {
         this.id = id;
     }
 
-    public Note(Long id, String text, java.util.Date created, Long author) {
+    public Note(Long id, String text, java.util.Date created, Double latitude, Double longitude, Long author) {
         this.id = id;
         this.text = text;
         this.created = created;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.author = author;
     }
 
@@ -66,6 +70,22 @@ public class Note {
 
     public void setCreated(java.util.Date created) {
         this.created = created;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public Long getAuthor() {
