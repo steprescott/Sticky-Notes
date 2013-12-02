@@ -14,3 +14,11 @@ id			Int(11)
 body		Text
 created		DateTime
 author		Int FK User(11)
+
+----------------------
+ Session
+----------------------
+id			Int(11)
+token		Text(255)
+user		Int FK User(11)
+created		DateTime
