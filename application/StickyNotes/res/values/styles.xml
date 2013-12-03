@@ -5,6 +5,7 @@
 	<color name="light_blue_opaque">#FFa7ccdb</color>
 	<color name="black_opaque">#FF000000</color>
 	<color name="shadow">#55000000</color>
+    <color name="text_grey">#FFDDDDDD</color>
 	<color name="button_dark">#FF0b6c98</color>
 
     <!--
@@ -86,13 +87,20 @@
         <item name="android:shadowColor">@color/shadow</item>
         <item name="android:shadowRadius">3</item>
     </style>
+
+    <style name="NoteLocationFont">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textSize">14dp</item>
+    </style>
     
     <style name="WelcomeFontSmall" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white_opaque</item>
         <item name="android:gravity">center</item>
-        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowColor">@color/text_grey</item>
         <item name="android:shadowRadius">3</item>
     </style>
 

@@ -44,4 +44,13 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/NoteLocationFont"
+        tools:text="Sheffield, United Kingdom"
+        android:id="@+id/note_list_item_location"
+        android:layout_alignBottom="@+id/note_list_item_time"
+        android:layout_alignParentRight="true"
+        android:paddingRight="15dp" />
 </RelativeLayout>

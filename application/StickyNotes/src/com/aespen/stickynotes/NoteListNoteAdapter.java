@@ -28,6 +28,7 @@ public class NoteListNoteAdapter extends android.widget.ArrayAdapter<Note>
 		Note note = this.getItem(position);
         noteListRow.setNoteText(note.getText());
         noteListRow.setNoteDate(note.getCreated());
+        noteListRow.setNoteLocation(note.getLongitude(), note.getLatitude());
 		return noteListRow;
 	}
 }
