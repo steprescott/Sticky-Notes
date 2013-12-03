@@ -28,18 +28,32 @@ exports.listNotesForUser = function(req, res){
 
 exports.persistNote = function(req, res){
 	var noteModel = orm.model('Note');
+	var sessionModel = orm.model('Session');	
 	var body = req.body.body;
-	var author = req.body.author;
+	var token = req.body.token;
 	var created = new Date();
-
-	noteModel.build({body: body, created: created, author: author})
-		.save()
-		.success(function(result){
-
+	
+	// Query our session table with the auth token
+	sessionModel.find({
+		where: { token: token }
+	}).error(function(error){
+		res.send(500);
+	}).success(function(session){
+		if (!session)
+		{
+			res.send(500);
+			return;
+		}
+		
+		noteModel.build({
+			body: body,
+			created: created,
+			author: session.user
+		}).save().success(function(result){
 			// Respond with the ID of the saved note
 			res.send(201, result.dataValues.id);
-
 		}).error(function(err) {
 			res.send(500, "Error saving note");
 		});
+	});
 };
