@@ -1,0 +1,3 @@
+[submodule "Submodules/SKCoreDataManager"]
+	path = Submodules/SKCoreDataManager
+	url = git@git.3squared.com:ios-libraries/SKCoreDataManager.git
