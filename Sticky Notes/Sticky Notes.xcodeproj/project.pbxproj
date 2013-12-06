@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AFF62DC1852734100828A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DB1852734100828A7A /* Foundation.framework */; };
+		4AFF62DE1852734100828A7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DD1852734100828A7A /* CoreGraphics.framework */; };
+		4AFF62E01852734100828A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DF1852734100828A7A /* UIKit.framework */; };
+		4AFF62E61852734100828A7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF62E41852734100828A7A /* InfoPlist.strings */; };
+		4AFF62E81852734100828A7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF62E71852734100828A7A /* main.m */; };
+		4AFF62EC1852734100828A7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF62EB1852734100828A7A /* AppDelegate.m */; };
+		4AFF62EF1852734100828A7A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF62ED1852734100828A7A /* Main_iPhone.storyboard */; };
+		4AFF62F21852734100828A7A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF62F01852734100828A7A /* Main_iPad.storyboard */; };
+		4AFF62F71852734100828A7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF62F61852734100828A7A /* Images.xcassets */; };
+		4AFF62FE1852734100828A7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62FD1852734100828A7A /* XCTest.framework */; };
+		4AFF62FF1852734100828A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DB1852734100828A7A /* Foundation.framework */; };
+		4AFF63001852734100828A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DF1852734100828A7A /* UIKit.framework */; };
+		4AFF63081852734100828A7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF63061852734100828A7A /* InfoPlist.strings */; };
+		4AFF630A1852734100828A7A /* Sticky_NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63091852734100828A7A /* Sticky_NotesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AFF63011852734100828A7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AFF62D01852734100828A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AFF62D71852734100828A7A;
+			remoteInfo = "Sticky Notes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AFF62D81852734100828A7A /* Sticky Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sticky Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AFF62DB1852734100828A7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4AFF62DD1852734100828A7A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4AFF62DF1852734100828A7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4AFF62E31852734100828A7A /* Sticky Notes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sticky Notes-Info.plist"; sourceTree = "<group>"; };
+		4AFF62E51852734100828A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4AFF62E71852734100828A7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4AFF62E91852734100828A7A /* Sticky Notes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sticky Notes-Prefix.pch"; sourceTree = "<group>"; };
+		4AFF62EA1852734100828A7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4AFF62EB1852734100828A7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AFF62EE1852734100828A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4AFF62F11852734100828A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4AFF62F61852734100828A7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4AFF62FC1852734100828A7A /* Sticky NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sticky NotesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AFF62FD1852734100828A7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4AFF63051852734100828A7A /* Sticky NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sticky NotesTests-Info.plist"; sourceTree = "<group>"; };
+		4AFF63071852734100828A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4AFF63091852734100828A7A /* Sticky_NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sticky_NotesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AFF62D51852734100828A7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF62DE1852734100828A7A /* CoreGraphics.framework in Frameworks */,
+				4AFF62E01852734100828A7A /* UIKit.framework in Frameworks */,
+				4AFF62DC1852734100828A7A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AFF62F91852734100828A7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF62FE1852734100828A7A /* XCTest.framework in Frameworks */,
+				4AFF63001852734100828A7A /* UIKit.framework in Frameworks */,
+				4AFF62FF1852734100828A7A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AFF62CF1852734100828A7A = {
+			isa = PBXGroup;
+			children = (
+				4AFF62E11852734100828A7A /* Sticky Notes */,
+				4AFF63031852734100828A7A /* Sticky NotesTests */,
+				4AFF62DA1852734100828A7A /* Frameworks */,
+				4AFF62D91852734100828A7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AFF62D91852734100828A7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF62D81852734100828A7A /* Sticky Notes.app */,
+				4AFF62FC1852734100828A7A /* Sticky NotesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AFF62DA1852734100828A7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF62DB1852734100828A7A /* Foundation.framework */,
+				4AFF62DD1852734100828A7A /* CoreGraphics.framework */,
+				4AFF62DF1852734100828A7A /* UIKit.framework */,
+				4AFF62FD1852734100828A7A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AFF62E11852734100828A7A /* Sticky Notes */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF62EA1852734100828A7A /* AppDelegate.h */,
+				4AFF62EB1852734100828A7A /* AppDelegate.m */,
+				4AFF62ED1852734100828A7A /* Main_iPhone.storyboard */,
+				4AFF62F01852734100828A7A /* Main_iPad.storyboard */,
+				4AFF6313185273D800828A7A /* View Controllers */,
+				4AFF62F61852734100828A7A /* Images.xcassets */,
+				4AFF62E21852734100828A7A /* Supporting Files */,
+			);
+			path = "Sticky Notes";
+			sourceTree = "<group>";
+		};
+		4AFF62E21852734100828A7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF62E31852734100828A7A /* Sticky Notes-Info.plist */,
+				4AFF62E41852734100828A7A /* InfoPlist.strings */,
+				4AFF62E71852734100828A7A /* main.m */,
+				4AFF62E91852734100828A7A /* Sticky Notes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AFF63031852734100828A7A /* Sticky NotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF63091852734100828A7A /* Sticky_NotesTests.m */,
+				4AFF63041852734100828A7A /* Supporting Files */,
+			);
+			path = "Sticky NotesTests";
+			sourceTree = "<group>";
+		};
+		4AFF63041852734100828A7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF63051852734100828A7A /* Sticky NotesTests-Info.plist */,
+				4AFF63061852734100828A7A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AFF6313185273D800828A7A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AFF62D71852734100828A7A /* Sticky Notes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AFF630D1852734100828A7A /* Build configuration list for PBXNativeTarget "Sticky Notes" */;
+			buildPhases = (
+				4AFF62D41852734100828A7A /* Sources */,
+				4AFF62D51852734100828A7A /* Frameworks */,
+				4AFF62D61852734100828A7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sticky Notes";
+			productName = "Sticky Notes";
+			productReference = 4AFF62D81852734100828A7A /* Sticky Notes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AFF62FB1852734100828A7A /* Sticky NotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AFF63101852734100828A7A /* Build configuration list for PBXNativeTarget "Sticky NotesTests" */;
+			buildPhases = (
+				4AFF62F81852734100828A7A /* Sources */,
+				4AFF62F91852734100828A7A /* Frameworks */,
+				4AFF62FA1852734100828A7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AFF63021852734100828A7A /* PBXTargetDependency */,
+			);
+			name = "Sticky NotesTests";
+			productName = "Sticky NotesTests";
+			productReference = 4AFF62FC1852734100828A7A /* Sticky NotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AFF62D01852734100828A7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = ste.me;
+				TargetAttributes = {
+					4AFF62FB1852734100828A7A = {
+						TestTargetID = 4AFF62D71852734100828A7A;
+					};
+				};
+			};
+			buildConfigurationList = 4AFF62D31852734100828A7A /* Build configuration list for PBXProject "Sticky Notes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AFF62CF1852734100828A7A;
+			productRefGroup = 4AFF62D91852734100828A7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AFF62D71852734100828A7A /* Sticky Notes */,
+				4AFF62FB1852734100828A7A /* Sticky NotesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AFF62D61852734100828A7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF62F21852734100828A7A /* Main_iPad.storyboard in Resources */,
+				4AFF62F71852734100828A7A /* Images.xcassets in Resources */,
+				4AFF62EF1852734100828A7A /* Main_iPhone.storyboard in Resources */,
+				4AFF62E61852734100828A7A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AFF62FA1852734100828A7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF63081852734100828A7A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AFF62D41852734100828A7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF62EC1852734100828A7A /* AppDelegate.m in Sources */,
+				4AFF62E81852734100828A7A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AFF62F81852734100828A7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFF630A1852734100828A7A /* Sticky_NotesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AFF63021852734100828A7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AFF62D71852734100828A7A /* Sticky Notes */;
+			targetProxy = 4AFF63011852734100828A7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4AFF62E41852734100828A7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AFF62E51852734100828A7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4AFF62ED1852734100828A7A /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AFF62EE1852734100828A7A /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4AFF62F01852734100828A7A /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AFF62F11852734100828A7A /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4AFF63061852734100828A7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AFF63071852734100828A7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AFF630B1852734100828A7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AFF630C1852734100828A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AFF630E1852734100828A7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sticky Notes/Sticky Notes-Prefix.pch";
+				INFOPLIST_FILE = "Sticky Notes/Sticky Notes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4AFF630F1852734100828A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sticky Notes/Sticky Notes-Prefix.pch";
+				INFOPLIST_FILE = "Sticky Notes/Sticky Notes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4AFF63111852734100828A7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sticky Notes.app/Sticky Notes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sticky Notes/Sticky Notes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sticky NotesTests/Sticky NotesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4AFF63121852734100828A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sticky Notes.app/Sticky Notes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sticky Notes/Sticky Notes-Prefix.pch";
+				INFOPLIST_FILE = "Sticky NotesTests/Sticky NotesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AFF62D31852734100828A7A /* Build configuration list for PBXProject "Sticky Notes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AFF630B1852734100828A7A /* Debug */,
+				4AFF630C1852734100828A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AFF630D1852734100828A7A /* Build configuration list for PBXNativeTarget "Sticky Notes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AFF630E1852734100828A7A /* Debug */,
+				4AFF630F1852734100828A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4AFF63101852734100828A7A /* Build configuration list for PBXNativeTarget "Sticky NotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AFF63111852734100828A7A /* Debug */,
+				4AFF63121852734100828A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AFF62D01852734100828A7A /* Project object */;
+}
