@@ -21,6 +21,18 @@
 		4AFF63001852734100828A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DF1852734100828A7A /* UIKit.framework */; };
 		4AFF63081852734100828A7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF63061852734100828A7A /* InfoPlist.strings */; };
 		4AFF630A1852734100828A7A /* Sticky_NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63091852734100828A7A /* Sticky_NotesTests.m */; };
+		4AFF633D1852750200828A7A /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF632E1852750200828A7A /* NSArray+Accessors.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AFF633E1852750200828A7A /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63301852750200828A7A /* NSManagedObject+Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AFF633F1852750200828A7A /* SKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63321852750200828A7A /* SKCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AFF63451852757000828A7A /* NotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63441852757000828A7A /* NotesListViewController.m */; };
+		4AFF6349185278EC00828A7A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF6347185278EC00828A7A /* CoreDataModel.xcdatamodeld */; };
+		4AFF63621852A0DF00828A7A /* User+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63611852A0DF00828A7A /* User+Additions.m */; };
+		4AFF63681852A16200828A7A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63671852A16200828A7A /* LoginViewController.m */; };
+		4AFF636B1852A5C900828A7A /* NewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF636A1852A5C900828A7A /* NewNoteViewController.m */; };
+		4AFF636E1852A66300828A7A /* Note+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF636D1852A66300828A7A /* Note+Additions.m */; };
+		4AFF63721852A8EB00828A7A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63711852A8EB00828A7A /* Location.m */; };
+		4AFF63751852A8EB00828A7A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63741852A8EB00828A7A /* User.m */; };
+		4AFF63781852A8EB00828A7A /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63771852A8EB00828A7A /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +64,30 @@
 		4AFF63051852734100828A7A /* Sticky NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sticky NotesTests-Info.plist"; sourceTree = "<group>"; };
 		4AFF63071852734100828A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AFF63091852734100828A7A /* Sticky_NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sticky_NotesTests.m; sourceTree = "<group>"; };
+		4AFF632D1852750200828A7A /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Accessors.h"; path = "src/NSArray+Accessors.h"; sourceTree = "<group>"; };
+		4AFF632E1852750200828A7A /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Accessors.m"; path = "src/NSArray+Accessors.m"; sourceTree = "<group>"; };
+		4AFF632F1852750200828A7A /* NSManagedObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Extensions.h"; path = "src/NSManagedObject+Extensions.h"; sourceTree = "<group>"; };
+		4AFF63301852750200828A7A /* NSManagedObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Extensions.m"; path = "src/NSManagedObject+Extensions.m"; sourceTree = "<group>"; };
+		4AFF63311852750200828A7A /* SKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCoreDataManager.h; path = src/SKCoreDataManager.h; sourceTree = "<group>"; };
+		4AFF63321852750200828A7A /* SKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCoreDataManager.m; path = src/SKCoreDataManager.m; sourceTree = "<group>"; };
+		4AFF63431852757000828A7A /* NotesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesListViewController.h; sourceTree = "<group>"; };
+		4AFF63441852757000828A7A /* NotesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesListViewController.m; sourceTree = "<group>"; };
+		4AFF6348185278EC00828A7A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		4AFF63601852A0DF00828A7A /* User+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Additions.h"; sourceTree = "<group>"; };
+		4AFF63611852A0DF00828A7A /* User+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Additions.m"; sourceTree = "<group>"; };
+		4AFF63661852A16200828A7A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4AFF63671852A16200828A7A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4AFF63691852A5C900828A7A /* NewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNoteViewController.h; sourceTree = "<group>"; };
+		4AFF636A1852A5C900828A7A /* NewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNoteViewController.m; sourceTree = "<group>"; };
+		4AFF636C1852A66300828A7A /* Note+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+Additions.h"; sourceTree = "<group>"; };
+		4AFF636D1852A66300828A7A /* Note+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+Additions.m"; sourceTree = "<group>"; };
+		4AFF636F1852A67500828A7A /* CoreDataCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataCategories.h; sourceTree = "<group>"; };
+		4AFF63701852A8EB00828A7A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		4AFF63711852A8EB00828A7A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		4AFF63731852A8EB00828A7A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4AFF63741852A8EB00828A7A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4AFF63761852A8EB00828A7A /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		4AFF63771852A8EB00828A7A /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +152,10 @@
 				4AFF62ED1852734100828A7A /* Main_iPhone.storyboard */,
 				4AFF62F01852734100828A7A /* Main_iPad.storyboard */,
 				4AFF6313185273D800828A7A /* View Controllers */,
+				4AFF6346185278D700828A7A /* Data */,
 				4AFF62F61852734100828A7A /* Images.xcassets */,
 				4AFF62E21852734100828A7A /* Supporting Files */,
+				4AFF63141852750200828A7A /* Submodules */,
 			);
 			path = "Sticky Notes";
 			sourceTree = "<group>";
@@ -154,8 +192,71 @@
 		4AFF6313185273D800828A7A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AFF63661852A16200828A7A /* LoginViewController.h */,
+				4AFF63671852A16200828A7A /* LoginViewController.m */,
+				4AFF63431852757000828A7A /* NotesListViewController.h */,
+				4AFF63441852757000828A7A /* NotesListViewController.m */,
+				4AFF63691852A5C900828A7A /* NewNoteViewController.h */,
+				4AFF636A1852A5C900828A7A /* NewNoteViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4AFF63141852750200828A7A /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF63151852750200828A7A /* SKCoreDataManager */,
+			);
+			name = Submodules;
+			path = ../../Submodules;
+			sourceTree = "<group>";
+		};
+		4AFF63151852750200828A7A /* SKCoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF632D1852750200828A7A /* NSArray+Accessors.h */,
+				4AFF632E1852750200828A7A /* NSArray+Accessors.m */,
+				4AFF632F1852750200828A7A /* NSManagedObject+Extensions.h */,
+				4AFF63301852750200828A7A /* NSManagedObject+Extensions.m */,
+				4AFF63311852750200828A7A /* SKCoreDataManager.h */,
+				4AFF63321852750200828A7A /* SKCoreDataManager.m */,
+			);
+			path = SKCoreDataManager;
+			sourceTree = "<group>";
+		};
+		4AFF6346185278D700828A7A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF6347185278EC00828A7A /* CoreDataModel.xcdatamodeld */,
+				4AFF635618527A4800828A7A /* Managed Objects */,
+				4AFF635518527A4800828A7A /* Core Data Categories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4AFF635518527A4800828A7A /* Core Data Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF636F1852A67500828A7A /* CoreDataCategories.h */,
+				4AFF63601852A0DF00828A7A /* User+Additions.h */,
+				4AFF63611852A0DF00828A7A /* User+Additions.m */,
+				4AFF636C1852A66300828A7A /* Note+Additions.h */,
+				4AFF636D1852A66300828A7A /* Note+Additions.m */,
+			);
+			path = "Core Data Categories";
+			sourceTree = "<group>";
+		};
+		4AFF635618527A4800828A7A /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF63761852A8EB00828A7A /* Note.h */,
+				4AFF63771852A8EB00828A7A /* Note.m */,
+				4AFF63731852A8EB00828A7A /* User.h */,
+				4AFF63741852A8EB00828A7A /* User.m */,
+				4AFF63701852A8EB00828A7A /* Location.h */,
+				4AFF63711852A8EB00828A7A /* Location.m */,
+			);
+			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +359,18 @@
 			files = (
 				4AFF62EC1852734100828A7A /* AppDelegate.m in Sources */,
 				4AFF62E81852734100828A7A /* main.m in Sources */,
+				4AFF633D1852750200828A7A /* NSArray+Accessors.m in Sources */,
+				4AFF633E1852750200828A7A /* NSManagedObject+Extensions.m in Sources */,
+				4AFF636B1852A5C900828A7A /* NewNoteViewController.m in Sources */,
+				4AFF63781852A8EB00828A7A /* Note.m in Sources */,
+				4AFF636E1852A66300828A7A /* Note+Additions.m in Sources */,
+				4AFF63451852757000828A7A /* NotesListViewController.m in Sources */,
+				4AFF63721852A8EB00828A7A /* Location.m in Sources */,
+				4AFF63751852A8EB00828A7A /* User.m in Sources */,
+				4AFF6349185278EC00828A7A /* CoreDataModel.xcdatamodeld in Sources */,
+				4AFF63681852A16200828A7A /* LoginViewController.m in Sources */,
+				4AFF633F1852750200828A7A /* SKCoreDataManager.m in Sources */,
+				4AFF63621852A0DF00828A7A /* User+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +599,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4AFF6347185278EC00828A7A /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4AFF6348185278EC00828A7A /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 4AFF6348185278EC00828A7A /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4AFF62D01852734100828A7A /* Project object */;
 }
