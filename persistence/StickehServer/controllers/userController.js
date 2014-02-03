@@ -75,7 +75,8 @@ exports.registerUserRequest = function(req, res){
 
     if (!inputValidationResult.valid)
     {
-        res.send(400, inputValidationResult.message)
+        res.send(400, inputValidationResult.message);
+        return;
     }
 
 	var hashedPassword = passwordHash.generate(password, {algorithm: 'sha512'});

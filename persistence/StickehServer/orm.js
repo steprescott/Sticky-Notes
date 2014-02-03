@@ -1,11 +1,12 @@
 var filesystem = require('fs');
 var models = {};
+var modelsToInit = ['Note', 'Session', 'User'];
 var relationships = {};
 
 var singleton = function singleton(){
     var Sequelize = require("sequelize");
     var sequelize = null;
-    var modelsPath = "";
+    var modelsPath = "./models";
     this.setup = function (path, database, username, password, obj){
         modelsPath = path;
 
@@ -30,19 +31,18 @@ var singleton = function singleton(){
     }
 
     function init() {
-        filesystem.readdirSync(modelsPath).forEach(function(name){
-			// We only want .js files
-			if (name.slice(-3) != '.js')
-				return;
-			
-            var object = require(modelsPath + "/" + name);
-            var options = object.options || {}
-            var modelName = name.replace(/\.js$/i, "");
+
+        for (var i = 0; i < modelsToInit.length; i++)
+        {
+            var modelName = modelsToInit[i];
+            var object = require(modelsPath + "/" + modelName);
+            var options = object.options || {};
             models[modelName] = sequelize.define(modelName, object.model, options);
             if("relations" in object){
                 relationships[modelName] = object.relations;
             }
-        });
+
+        }
         console.log(models)
         for(var name in relationships){
             var relation = relationships[name];
