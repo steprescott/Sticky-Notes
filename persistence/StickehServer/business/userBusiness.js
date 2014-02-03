@@ -1,36 +1,49 @@
-var orm = require('../orm');
 var passwordHash = require('password-hash');
-var crypto = require('crypto');
 
-exports.getUserData = function (req, res) {
+var userPersistence = require('../persistence/userPersistence');
+var sessionPersistence = require('../persistence/sessionPersistence');
+
+exports.onGetUserDataRequest = function (req, res)
+{
 	var id = req.params.id;
 
-	var userModel = orm.model('User');
-	userModel.find({ where: {id: id} }).error(function (err) {
+    userPersistence.getUserByID(id, userDataReturnedHandler);
 
-		// error callback
-	}).success(function (user) {
-			if (!user)
-			{
-				res.send(401, 'Unknown ID');
-			}
+    function userDataReturnedHandler(err, user)
+    {
+        if (err)
+        {
+            console.log(err);
+            res.send(500, 'Error retrieving user data')
+            return;
+        }
 
-			res.send(200, user);
-		});
+        if (!user)
+        {
+            res.send(401, 'Unknown ID');
+            return;
+        }
+
+        res.send(200, user);
+    }
 };
 
-exports.loginRequest = function (req, res) {
-
+exports.onLoginRequest = function (req, res)
+{
 	var username = req.body.username;
 	var password = req.body.password;
-	var userModel = orm.model('User');
-	var sessionModel = orm.model('Session');
-	
-	userModel.find({
-		where: { email: username }
-	}).error(function(err){
-		res.send(500);
-	}).success(function(user){
+
+    userPersistence.getUserByEmail(username, userDataReturnedHandler);
+
+    function userDataReturnedHandler(err, user)
+    {
+        if (err)
+        {
+            console.log(err);
+            res.send(500, 'Error retrieving user data')
+            return;
+        }
+
 		if (!user)
 		{
 			res.send(403, 'Invalid credentials');
@@ -43,29 +56,35 @@ exports.loginRequest = function (req, res) {
 			return;
 		}
 
-		// Gives us some real entropy: http://stackoverflow.com/a/14869745
-		var token = crypto.randomBytes(64).toString('hex');
-		sessionModel.build({
-			token: token,
-			user: user.id
-		}).save();
+        sessionPersistence.createSession(user.id, sessionSavedHandler)
 
-		var result =
-		{
-			session:
-			{
-				id: token,
-				created: new Date()
-			},
-			user: user
-		}
+        function sessionSavedHandler(err, session)
+        {
+            if (err)
+            {
+                console.log(err);
+                res.send(500, 'Error setting up user session')
+                return;
+            }
 
-		res.send(200, result);
-	});
+            var result =
+            {
+                session:
+                {
+                    id: session.token,
+                    created: new Date()
+                },
+                user: user
+            }
+
+            res.send(200, result);
+        };
+
+	};
 };
 
-exports.registerUserRequest = function(req, res){
-	var userModel = orm.model('User');
+exports.onRegisterUserRequest = function(req, res)
+{
 	var firstName = req.body.firstName;
 	var surname = req.body.surname;
 	var password = req.body.password;
@@ -81,19 +100,18 @@ exports.registerUserRequest = function(req, res){
 
 	var hashedPassword = passwordHash.generate(password, {algorithm: 'sha512'});
 
-	userModel.build({
-		firstName: firstName,
-		surname: surname,
-		email: email,
-		password: hashedPassword})
-		.save()
-		.success(function() {
+    userPersistence.createUser(firstName, surname, email, hashedPassword, userSavedHandler);
 
-			res.send(201, 'User successfully registered');
+    function userSavedHandler(err, user)
+    {
+        if (err)
+        {
+            res.send(500, "Error registering user");
+            return;
+        }
 
-		}).error(function(err) {
-			res.send(500, "Error registering user");
-		});
+        res.send(201, 'User successfully registered');
+    }
 }
 
 function validateRegistrationInput(email, password, firstName, surname)
@@ -108,7 +126,7 @@ function validateRegistrationInput(email, password, firstName, surname)
     if (!emailInputResult.valid)
     {
         result.valid = false;
-        result.message = emailInputResult.message
+        result.message = emailInputResult.message;
         return result;
     }
 
@@ -117,7 +135,7 @@ function validateRegistrationInput(email, password, firstName, surname)
     if (!passwordInputResult.valid)
     {
         result.valid = false;
-        result.message = passwordInputResult.message
+        result.message = passwordInputResult.message;
         return result;
     }
 
@@ -126,7 +144,7 @@ function validateRegistrationInput(email, password, firstName, surname)
     if (!nameInputResult.valid)
     {
         result.valid = false;
-        result.message = nameInputResult.message
+        result.message = nameInputResult.message;
         return result;
     }
 
