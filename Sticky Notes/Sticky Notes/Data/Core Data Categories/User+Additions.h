@@ -7,9 +7,11 @@
 //
 
 #import "User.h"
+typedef void(^LoginSuccess)(User *activeUser);
+typedef void(^LoginFailure)(NSError *error);
 
 @interface User (Additions)
 
 + (User *)activeUser;
-
++ (void)loginUserWithUsername:(NSString *)username password:(NSString *)password success:(LoginSuccess)successBlock failure:(LoginFailure)failureBlock;
 @end
