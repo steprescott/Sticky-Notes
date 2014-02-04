@@ -2,8 +2,8 @@
 //  User.h
 //  Sticky Notes
 //
-//  Created by Ste Prescott on 07/12/2013.
-//  Copyright (c) 2013 ste.me. All rights reserved.
+//  Created by Ste Prescott on 04/02/2014.
+//  Copyright (c) 2014 ste.me. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,8 +14,10 @@
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * isActive;
-@property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString * userID;
+@property (nonatomic, retain) NSString * email;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * surname;
 @property (nonatomic, retain) NSSet *notes;
 @end
 
