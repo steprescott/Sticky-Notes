@@ -1,3 +1,6 @@
 [submodule "Submodules/SKCoreDataManager"]
 	path = Submodules/SKCoreDataManager
-	url = git@git.3squared.com:ios-libraries/SKCoreDataManager.git
+url=http://git.3squared.com/ios-libraries/SKCoreDataManager.git
+[submodule "Submodules/AFNetworking"]
+	path = Submodules/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
