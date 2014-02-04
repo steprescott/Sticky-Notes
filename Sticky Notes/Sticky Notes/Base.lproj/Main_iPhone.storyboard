@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SyA-dl-ano">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SyA-dl-ano">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -21,12 +21,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.66666666669999997" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Pmp-Z6-Tfj">
-                                    <rect key="frame" x="0.0" y="181" width="320" height="15"/>
+                                    <rect key="frame" x="0.0" y="117" width="320" height="15"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="notesCell" editingAccessoryType="detailDisclosureButton" rowHeight="95" id="uHw-eS-o4h">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="95"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uHw-eS-o4h" id="LpO-4O-UIM">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="94"/>
@@ -163,12 +163,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27L-pa-0QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="72"/>
+            <point key="canvasLocation" x="953" y="72"/>
         </scene>
-        <!--View Controller - Login-->
+        <!--Login View Controller - Login-->
         <scene sceneID="Q8t-ku-zg6">
             <objects>
-                <viewController id="dxX-54-LRX" sceneMemberID="viewController">
+                <viewController id="dxX-54-LRX" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9bV-3M-oSJ"/>
                         <viewControllerLayoutGuide type="bottom" id="oVi-78-iCO"/>
@@ -208,6 +208,9 @@
                                     <color key="titleColor" red="0.78762906960000001" green="0.94954744140000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="dxX-54-LRX" eventType="touchUpInside" id="xyM-Ec-Vjb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDc-5P-dfu">
                                 <rect key="frame" x="20" y="513" width="280" height="35"/>
@@ -254,10 +257,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="pdZ-ZU-3hf"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="ogk-dO-G3o" id="BHV-dt-j32"/>
+                        <outlet property="usernameTextField" destination="GVO-Gw-uOs" id="U4J-fe-HmX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eB2-oo-G0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="759"/>
+            <point key="canvasLocation" x="444" y="759"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RDE-2Y-Fad">
@@ -267,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="nEv-zC-9K0"/>
+                        <segue destination="dxX-54-LRX" kind="relationship" relationship="rootViewController" id="X4E-Al-ygQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZt-Vf-iBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXO-Tr-8I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="759"/>
+            <point key="canvasLocation" x="953" y="759"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
