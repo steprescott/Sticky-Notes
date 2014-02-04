@@ -7,8 +7,14 @@
 //
 
 #import "LoginViewController.h"
+#import "User+Additions.h"
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
+- (IBAction)loginButtonPressed:(id)sender;
 
 @end
 
@@ -29,6 +35,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (IBAction)loginButtonPressed:(id)sender
+{
+	NSString *username = [_usernameTextField text];
+	NSString *password = [_passwordTextField text];
+	
+	if(![username isEqualToString:@""])
+	{
+		if(![password isEqualToString:@""])
+		{
+			NSLog(@"Try to validate user");
+			[User loginUserWithUsername:username
+							   password:password
+								success:^(User *activeUser) {
+									NSLog(@"User : %@", activeUser);
+								} failure:^(NSError *error) {
+									NSLog(@"Error: %@", error);
+								}];
+		}
+		else
+		{
+			NSLog(@"No password");
+		}
+	}
+	else
+	{
+		NSLog(@"No username");
+	}
 }
 
 - (void)didReceiveMemoryWarning
