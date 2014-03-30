@@ -11,6 +11,20 @@
 
 #define kBaseURL @"http://stickyapi.alanedwardes.com/"
 
-#define klogin @"user/login"
+#define kLogin @"user/login"
+#define kRegister @"user/register"
+#define kUpdateUser @"user/editDetails"
+
+#define kGetBoards @"boards/list" 
+#define kUploadBoards @"boards/save" 
+#define kDeleteBoard @"boards/delete"
+#define kLeaveBoard @"/boards/leave"
+#define kUsersForBoard @"/board/getUsers"
+#define kInviteUserToBoard @"/board/addUser"
+
+#define kGetNotes @"notes/list"
+#define kUploadNewNote @"notes/save"
+#define kUpdateNote @"notes/edit"
+#define kDeleteNote @"notes/delete"
 
 #endif

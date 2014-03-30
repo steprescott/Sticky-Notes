@@ -7,7 +7,9 @@
 //
 
 #import "LoginViewController.h"
-#import "User+Additions.h"
+
+#import "SKCoreDataManager.h"
+#import "CoreDataCategories.h"
 
 @interface LoginViewController ()
 
@@ -46,23 +48,46 @@
 	{
 		if(![password isEqualToString:@""])
 		{
-			NSLog(@"Try to validate user");
 			[User loginUserWithUsername:username
 							   password:password
 								success:^(User *activeUser) {
 									NSLog(@"User : %@", activeUser);
+									
+									[Board boardsForUser:activeUser success:^(NSDictionary *boardsDictionary) {
+										NSLog(@"Boards %@", boardsDictionary);
+										
+										[boardsDictionary[@"boards"] enumerateObjectsUsingBlock:^(NSDictionary *boardDictionary, NSUInteger idx, BOOL *stop) {
+											NSNumber *boardID = boardDictionary[@"id"];
+											NSString *boardName = boardDictionary[@"name"];
+											NSNumber *boardOwnerUserID = boardDictionary[@"owner_user_id"];
+											
+											[Board createOrUpdateBoardWithID:boardID
+																   boardName:boardName
+															boardOwnerUserID:boardOwnerUserID];
+										}];
+										
+										[self dismissViewControllerAnimated:YES completion:nil];
+										
+									} failure:^(NSError *error) {
+										NSLog(@"Boards error : %@", [error localizedDescription]);
+										[SVProgressHUD showErrorWithStatus:@"Could not load your boards"];
+									}];
+									
 								} failure:^(NSError *error) {
 									NSLog(@"Error: %@", error);
+									[SVProgressHUD showErrorWithStatus:@"Incorrect username\nor password"];
 								}];
 		}
 		else
 		{
 			NSLog(@"No password");
+			[SVProgressHUD showErrorWithStatus:@"No password"];
 		}
 	}
 	else
 	{
 		NSLog(@"No username");
+		[SVProgressHUD showErrorWithStatus:@"No username"];
 	}
 }
 

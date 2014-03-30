@@ -3,4 +3,16 @@
 url=http://git.3squared.com/ios-libraries/SKCoreDataManager.git
 [submodule "Submodules/AFNetworking"]
 	path = Submodules/AFNetworking
-	url = https://github.com/AFNetworking/AFNetworking.git
+	url = git@github.com:AFNetworking/AFNetworking.git
+[submodule "Submodules/KLNoteViewController"]
+	path = Submodules/KLNoteViewController
+	url = git@github.com:KieranLafferty/KLNoteViewController.git
+[submodule "Submodules/REFrostedViewController"]
+	path = Submodules/REFrostedViewController
+	url = git@github.com:romaonthego/REFrostedViewController.git
+[submodule "Submodules/Ashton"]
+	path = Submodules/Ashton
+	url = git@github.com:IdeasOnCanvas/Ashton.git
+[submodule "Submodules/SVProgressHUD"]
+	path = Submodules/SVProgressHUD
+	url = git@github.com:samvermette/SVProgressHUD.git

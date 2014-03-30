@@ -8,9 +8,20 @@
 
 #import "Note.h"
 
+typedef void(^UploadNoteSuccess)(Note *note);
+typedef void(^NotesForUserOnBoardSuccess)(NSDictionary *notes);
+typedef void(^DeleteNoteSuccess)();
+
+typedef void(^NoteFailure)(NSError *error);
+
+@class Board;
+
 @interface Note (Additions)
 
-+ (BOOL)createOrUpdateNoteWithID:(NSString *)noteID title:(NSString *)noteTitle body:(NSString *)noteBody;
++ (Note *)noteWithNoteID:(NSNumber *)noteID;
++ (Note *)createOrUpdateNoteWithID:(NSNumber *)noteID title:(NSString *)noteTitle body:(NSAttributedString *)noteBody noteDate:(NSDate *)date authorID:(NSNumber *)authorID boardID:(NSNumber *)boardID;
++ (void)uploadNote:(Note *)note toBoard:(Board *)board forUser:(User *)user success:(UploadNoteSuccess)successBlock failure:(NoteFailure)failureBlock;
++ (void)notesForUser:(User *)user onBoard:(Board *)board success:(NotesForUserOnBoardSuccess)successBlock failure:(NoteFailure)failureBlock;
 + (NSArray *)allNotesWithNoUser;
-
++ (void)deleteNote:(Note *)note forUser:(User *)user success:(DeleteNoteSuccess)successBlock failure:(NoteFailure)failureBlock;
 @end

@@ -11,5 +11,6 @@
 
 #import "User+Additions.h"
 #import "Note+Additions.h"
+#import "Board+Additions.h"
 
 #endif
