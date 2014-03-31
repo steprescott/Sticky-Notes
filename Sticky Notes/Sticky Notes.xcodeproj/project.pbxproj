@@ -116,6 +116,9 @@
 		4AC1C5BF18DCFF4A00548A07 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1C5BE18DCFF4A00548A07 /* RootViewController.m */; };
 		4ACA83FC18E8ABC2008CAA96 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA83EA18E8ABC2008CAA96 /* SVProgressHUD.bundle */; };
 		4ACA83FD18E8ABC2008CAA96 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA83EC18E8ABC2008CAA96 /* SVProgressHUD.m */; };
+		4ACA840B18E8DC73008CAA96 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA840A18E8DC73008CAA96 /* UserTests.m */; };
+		4ACA840D18E8E395008CAA96 /* NoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA840C18E8E395008CAA96 /* NoteTests.m */; };
+		4ACA840F18E8E73A008CAA96 /* BoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA840E18E8E73A008CAA96 /* BoardTests.m */; };
 		4AEB828218E19B8D0079AEAD /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB828118E19B8D0079AEAD /* Board.m */; };
 		4AEB828518E19B8E0079AEAD /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB828418E19B8E0079AEAD /* Note.m */; };
 		4AEB828818E19B8E0079AEAD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB828718E19B8E0079AEAD /* User.m */; };
@@ -133,7 +136,6 @@
 		4AFF62FF1852734100828A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DB1852734100828A7A /* Foundation.framework */; };
 		4AFF63001852734100828A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFF62DF1852734100828A7A /* UIKit.framework */; };
 		4AFF63081852734100828A7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF63061852734100828A7A /* InfoPlist.strings */; };
-		4AFF630A1852734100828A7A /* Sticky_NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63091852734100828A7A /* Sticky_NotesTests.m */; };
 		4AFF633D1852750200828A7A /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF632E1852750200828A7A /* NSArray+Accessors.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4AFF633E1852750200828A7A /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63301852750200828A7A /* NSManagedObject+Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4AFF633F1852750200828A7A /* SKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF63321852750200828A7A /* SKCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -308,6 +310,9 @@
 		4ACA83EA18E8ABC2008CAA96 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		4ACA83EB18E8ABC2008CAA96 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		4ACA83EC18E8ABC2008CAA96 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		4ACA840A18E8DC73008CAA96 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		4ACA840C18E8E395008CAA96 /* NoteTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTests.m; sourceTree = "<group>"; };
+		4ACA840E18E8E73A008CAA96 /* BoardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardTests.m; sourceTree = "<group>"; };
 		4AEB828018E19B8D0079AEAD /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		4AEB828118E19B8D0079AEAD /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		4AEB828318E19B8E0079AEAD /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -333,7 +338,6 @@
 		4AFF62FD1852734100828A7A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4AFF63051852734100828A7A /* Sticky NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sticky NotesTests-Info.plist"; sourceTree = "<group>"; };
 		4AFF63071852734100828A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4AFF63091852734100828A7A /* Sticky_NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sticky_NotesTests.m; sourceTree = "<group>"; };
 		4AFF632D1852750200828A7A /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Accessors.h"; path = "src/NSArray+Accessors.h"; sourceTree = "<group>"; };
 		4AFF632E1852750200828A7A /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Accessors.m"; path = "src/NSArray+Accessors.m"; sourceTree = "<group>"; };
 		4AFF632F1852750200828A7A /* NSManagedObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Extensions.h"; path = "src/NSManagedObject+Extensions.h"; sourceTree = "<group>"; };
@@ -716,7 +720,9 @@
 		4AFF63031852734100828A7A /* Sticky NotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				4AFF63091852734100828A7A /* Sticky_NotesTests.m */,
+				4ACA840A18E8DC73008CAA96 /* UserTests.m */,
+				4ACA840C18E8E395008CAA96 /* NoteTests.m */,
+				4ACA840E18E8E73A008CAA96 /* BoardTests.m */,
 				4AFF63041852734100828A7A /* Supporting Files */,
 			);
 			path = "Sticky NotesTests";
@@ -999,7 +1005,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AFF630A1852734100828A7A /* Sticky_NotesTests.m in Sources */,
+				4ACA840D18E8E395008CAA96 /* NoteTests.m in Sources */,
+				4ACA840B18E8DC73008CAA96 /* UserTests.m in Sources */,
+				4ACA840F18E8E73A008CAA96 /* BoardTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
