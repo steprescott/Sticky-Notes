@@ -79,7 +79,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="Tap here to show the register form" label="Register"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="QhE-sn-0oX"/>
+                                    <constraint firstAttribute="height" constant="35" id="5mg-TX-s4N"/>
+                                    <constraint firstAttribute="width" constant="728" id="gPr-nx-CBd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Not a user? Register here.">
@@ -104,18 +105,17 @@
                             <constraint firstItem="Eln-B9-jOA" firstAttribute="top" secondItem="v7Q-x8-Qp4" secondAttribute="bottom" constant="16" id="4Kl-ML-W8L"/>
                             <constraint firstItem="NYg-2o-nJm" firstAttribute="top" secondItem="zsm-Ou-qiq" secondAttribute="bottom" constant="15" id="A7h-WE-KjY"/>
                             <constraint firstItem="Eln-B9-jOA" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="20" id="AxT-W9-XkM"/>
+                            <constraint firstItem="UIh-2L-aEd" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="20" id="Iek-X4-qEI"/>
+                            <constraint firstItem="LJd-ds-jl9" firstAttribute="top" secondItem="UIh-2L-aEd" secondAttribute="bottom" constant="20" id="MI6-W6-JgK"/>
                             <constraint firstItem="7yC-MX-4FD" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="191" id="Tnf-kj-f22"/>
-                            <constraint firstItem="UIh-2L-aEd" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="20" id="Waf-Ep-g9p"/>
                             <constraint firstAttribute="trailing" secondItem="7yC-MX-4FD" secondAttribute="trailing" constant="191" id="YIM-01-gLv"/>
+                            <constraint firstAttribute="trailing" secondItem="UIh-2L-aEd" secondAttribute="trailing" constant="20" id="a6H-F5-OEL"/>
                             <constraint firstItem="v7Q-x8-Qp4" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="191" id="cdC-aM-l8K"/>
                             <constraint firstAttribute="trailing" secondItem="v7Q-x8-Qp4" secondAttribute="trailing" constant="191" id="dcv-ei-Vup"/>
                             <constraint firstItem="NYg-2o-nJm" firstAttribute="leading" secondItem="PVR-B4-v0d" secondAttribute="leading" constant="47" id="eyh-vj-kDI"/>
-                            <constraint firstAttribute="centerY" secondItem="UIh-2L-aEd" secondAttribute="centerY" constant="-246.5" id="lXg-wc-DNr"/>
                             <constraint firstItem="v7Q-x8-Qp4" firstAttribute="top" secondItem="7yC-MX-4FD" secondAttribute="bottom" constant="18" id="lpF-om-rKv"/>
-                            <constraint firstAttribute="trailing" secondItem="UIh-2L-aEd" secondAttribute="trailing" constant="20" id="nq9-sf-hGQ"/>
                             <constraint firstItem="7yC-MX-4FD" firstAttribute="top" secondItem="NYg-2o-nJm" secondAttribute="bottom" constant="8" id="oPk-yY-BPp"/>
                             <constraint firstAttribute="trailing" secondItem="Eln-B9-jOA" secondAttribute="trailing" constant="20" id="rZc-7v-gHZ"/>
-                            <constraint firstItem="LJd-ds-jl9" firstAttribute="top" secondItem="UIh-2L-aEd" secondAttribute="bottom" constant="20" id="sR1-c7-CVh"/>
                             <constraint firstAttribute="trailing" secondItem="NYg-2o-nJm" secondAttribute="trailing" constant="46" id="vNB-47-UKh"/>
                         </constraints>
                     </view>
